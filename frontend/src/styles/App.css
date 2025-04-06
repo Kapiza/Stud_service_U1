@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,43 +12,101 @@ html, body, #root, .App {
     height: 100%;
 }
 
+html{
+    font-size: 30px;
+}
+
+:root{
+    --section_title-height: 65px;
+    --icon_height: var(--section_title-height);
+    --icon_width: var(--icon_height);
+}
+
+
+p{
+    max-width: 300px;
+    overflow-wrap: break-word; /* Переносит целые слова, если они не помещаются */
+}
 
 
 @font-face {
     font-family: "My_font";
     src: url(../fonts/Roboto-Medium.ttf);
-    font-weight: bold;
-    font-size: 5rem;
+    font-weight: 250;
+    /*font-size: 5rem;*/
+}
+
+.SVG-icon{
+    margin-right: 15px;
+    height: var(--section_title-height);
+    width: var(--section_title-height);
+}
+
+
+.level_1{
+    font-size: 35px;
+
 }
 
 /**/
 
 .App{
     display: flex;
-    align-items: center;
-    font-family: "My_font";
-    color: #083f85;
-    font-size: 1.5rem;
+    /*align-items: center;*/
+
+    /*font-family: "My_font";*/
+    font-family: 'Inter', sans-serif;
+    font-weight: 500; /* Лёгкий вариант */
+    /*color: #083f85;*/
+    /*font-size: 1.5rem;*/
+}
+
+.Subject{
+
+    /*Центрируем Subject*/
+    /*position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);*/
+    width: 80%;
+    height: 100%;
+    padding: 2%;
+    /*border: rgba(52, 145, 0, 1) solid 4px;*/
+}
+
+.Sidebar{
+    margin-left: auto;
+    background: #d2d4d5;
+    width: 382px;
+    height: 100%;
+    padding: 1% 0 0 1.5%;
+
+    /*justify-content: center;*/
+
+
+
 }
 
 .SubjectMenu {
-    margin-left: 5%;
+    /*margin-left: 5%;*/
     display: flex;
     flex-direction: column;
+}
+
+.section_title {
+    /*margin-left: 5%;*/
+    /*text-align: center;*/
+    height: var(--section_title-height);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.list_subjects > p{
+    padding: 0 0 10px 0;
 }
 
 .SubjectMenu > * {
     display: flex;
     flex-direction: column;
-}
-
-.Subject{
-    /*Центрируем Subject*/
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    width: 500px;
-    height: 500px;
-    padding: 20px;
-    border: rgba(52, 145, 0, 1) solid 4px;
 }
 
 .SubjectForm{
@@ -76,7 +138,7 @@ input, .note-input, .card-input {
     align-self: stretch;
     width: 350px;
     border-radius: 15px;
-    font-size: 1.5rem;
+    /*font-size: 1.5rem;*/
     padding: 4px 10px;
 }
 
@@ -95,7 +157,7 @@ button {
     padding: 2px 10px;
     margin-left: 5px ;
     /*background: transparent;*/
-    font-size: 1rem;
+    /*font-size: 1rem;*/
     cursor: pointer;
     border:none;
     background-color: #e6e4e4;
@@ -104,7 +166,7 @@ button {
 
 .select-button, .add-card-button, .delete-card-button{
     margin-top: 5%;
-    font-size: 2rem;
+    /*font-size: 2rem;*/
 }
 
 /**/

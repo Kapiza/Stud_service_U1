@@ -1,9 +1,9 @@
 import './styles/App.css'
 import Subject from "./components/Subject";
 import {useState} from "react";
-import SubjectMenu from "./components/SubjectMenu";
 import MyModal from "./components/MyModal";
 import SubjectForm from "./components/SubjectForm";
+import Sidebar from "./components/Sidebar";
 
 
 function App() {
@@ -49,12 +49,14 @@ function App() {
 
     return (
         <div className="App">
-            <SubjectMenu subjects={subjects} setSSI={setSSI} setModalVisible={setModalVisible}
-                         removeSubject={removeSubject}/>
             <Subject subject={subjects[SSI]} addNote={addNote} removeNote={removeNote}/>
-            <MyModal modalVisible={modalVisible} setModalVisible={setModalVisible}>
-                <SubjectForm addSubject={addSubject}/>
-            </MyModal>
+            <Sidebar />
+
+            {/*<SubjectMenu subjects={subjects} setSSI={setSSI} setModalVisible={setModalVisible}*/}
+            {/*             removeSubject={removeSubject}/>*/}
+            {/*<MyModal modalVisible={modalVisible} setModalVisible={setModalVisible}>*/}
+            {/*    <SubjectForm addSubject={addSubject}/>*/}
+            {/*</MyModal>*/}
         </div>
     );
 }

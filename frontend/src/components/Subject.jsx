@@ -8,7 +8,9 @@ const Subject = ({subject, addNote, removeNote}) => {
     if (!subject) {
         return (
             // В стилях центрируем сообщение
-            <div style={{ position: "absolute", top:  "50%", left: "50%", transform: "translate(-50%, -50%)"}}>
+            // <div style={{  width: "500px",
+            //     height: "500px", position: "absolute", top:  "50%", left: "50%", transform: "translate(-50%, -50%)"}}>
+            <div className="Subject">
                 Карточка не выбрана
             </div>
     )
