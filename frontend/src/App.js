@@ -4,6 +4,7 @@ import {useState} from "react";
 import MyModal from "./components/MyModal";
 import SubjectForm from "./components/SubjectForm";
 import Sidebar from "./components/Sidebar";
+import MainArea from "./components/MainArea";
 
 
 function App() {
@@ -49,9 +50,11 @@ function App() {
 
     return (
         <div className="App">
-            <Subject subject={subjects[SSI]} addNote={addNote} removeNote={removeNote}/>
+            <MainArea />
             <Sidebar />
 
+
+            {/*<Subject subject={subjects[SSI]} addNote={addNote} removeNote={removeNote}/>*/}
             {/*<SubjectMenu subjects={subjects} setSSI={setSSI} setModalVisible={setModalVisible}*/}
             {/*             removeSubject={removeSubject}/>*/}
             {/*<MyModal modalVisible={modalVisible} setModalVisible={setModalVisible}>*/}

@@ -2,30 +2,27 @@
 import "../styles/App.css"
 import NoteList from "./NoteList";
 import NoteForm from "./NoteForm";
+import Block from "./Block";
 
 const Subject = ({subject, addNote, removeNote}) => {
 
-    if (!subject) {
-        return (
-            // В стилях центрируем сообщение
-            // <div style={{  width: "500px",
-            //     height: "500px", position: "absolute", top:  "50%", left: "50%", transform: "translate(-50%, -50%)"}}>
-            <div className="Subject">
-                Карточка не выбрана
-            </div>
-    )
-    }
-
-    const {title, subTitle, notes} = subject;
-
     return (
         <div className="Subject">
-            <h1>{title}</h1>
-            <h3>{subTitle}</h3>
-            <NoteList notes = {notes} removeNote = {removeNote} />
-            <NoteForm addNote = {addNote}></NoteForm>
+            <div className="info">
+                <p >Физика</p>
+                <p >Ситников М. Н.</p>
+                <p className="link">E-mail, VK, TG</p>
+                <p >Экзамен</p>
+            </div>
+            <div className="blocks">
+                <Block class="class_block"/>
+                <Block class="class_block"/>
+                <Block class="description_block"/>
+
+            </div>
+
         </div>
-    );
+    )
 };
 
 export default Subject;

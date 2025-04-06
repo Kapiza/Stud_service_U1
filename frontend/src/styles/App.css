@@ -13,7 +13,7 @@ html, body, #root, .App {
 }
 
 html{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 :root{
@@ -26,6 +26,10 @@ html{
 p{
     max-width: 300px;
     overflow-wrap: break-word; /* Переносит целые слова, если они не помещаются */
+}
+
+.link{
+    color: #0059FF;
 }
 
 
@@ -42,10 +46,19 @@ p{
     width: var(--section_title-height);
 }
 
+.doc-SVG{
+    height: 1.5rem;
+    margin-left: 5px;
+    /*align-self: flex-start;*/
+}
+
 
 .level_1{
-    font-size: 35px;
+    font-size: 33px;
+}
 
+.level_2{
+    font-size: 38px;
 }
 
 /**/
@@ -61,22 +74,68 @@ p{
     /*font-size: 1.5rem;*/
 }
 
-.Subject{
-
-    /*Центрируем Subject*/
-    /*position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);*/
+.MainArea{
     width: 80%;
     height: 100%;
     padding: 2%;
-    /*border: rgba(52, 145, 0, 1) solid 4px;*/
+}
+
+.Subject{
+    height: 100%;
+    width: 100%;
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+}
+
+.info > p{
+    margin-right: 20px;
+}
+
+.blocks{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+
+    grid-auto-flow: column;
+    gap: 16px;
+
+
+    padding: 30px 2%;
+    height: 100%;
+    /*width: 100%;*/
+}
+
+.Block{
+    border: solid 2px #000000;
+    /*margin: 2%;*/
+    padding: 2% 5%;
+}
+
+.list_class{
+    margin: 5px 0;
+}
+
+.class{
+    height: 1.5rem;
+    display: flex;
+    margin: 5px 0;
+    align-items: center ;
+}
+
+.description_block{
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .Sidebar{
     margin-left: auto;
     background: #d2d4d5;
-    width: 382px;
+    /*width: 382px;*/
     height: 100%;
-    padding: 1% 0 0 1.5%;
+    padding: 1% 1.5%;
 
     /*justify-content: center;*/
 
