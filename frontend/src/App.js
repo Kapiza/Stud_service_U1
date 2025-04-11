@@ -9,45 +9,7 @@ import MainArea from "./components/MainArea";
 
 function App() {
 
-    const [subjects, setSubjects] = useState([]);
-
-    const addSubject = (newSubject) => {
-        // post(newSubject)
-        setSubjects([...subjects, newSubject])
-        setModalVisible(false)
-    }
-
-    const removeSubject = (subject) => {
-        setSubjects(subjects.filter((s) => s.id !== subject.id))
-
-        // deleteMethod({SSI, subject })
-
-    }
-
-    const addNote = (note) => {
-        const list  = [...subjects];
-        list[SSI].notes.push(note);
-        setSubjects([...list]);
-
-        // put({SSI, note, add: true});
-    }
-
-    const removeNote = (note) => {
-        const list  = [...subjects];
-        list[SSI] = {
-            ...list[SSI],
-            notes: list[SSI].notes.filter(n => n.id !== note.id)
-        };
-        setSubjects([...list]);
-        // const updatedData ;
-        // put({SSI, note, add:false});
-
-    }
-
-    const [SSI, setSSI] = useState(0) // selectedSubjectIndex
-
-    const [modalVisible, setModalVisible] = useState(false);
-
+    
     return (
         <div className="App">
             <MainArea />
@@ -76,9 +38,9 @@ export default App;
 //                 title: "Раз"
 //             },
 //             {
-//                 id: 2,
-//                 title: "Раз-Два"
-//             }
+    //                 id: 2,
+    //                 title: "Раз-Два"
+    //             }
 //         ]
 //     },
 //     {
@@ -87,16 +49,16 @@ export default App;
 //         subTitle:"Кириллов Р. Р.",
 //         notes: [
 //             {
-//                 id: 3,
+    //                 id: 3,
 //                 title: "Два"
 //             }
 //         ]
 //     },
 //     {
-//         id:2,
-//         title:"3",
-//         subTitle:"Кириллов Р. Р.",
-//         notes:  [
+    //         id:2,
+    //         title:"3",
+    //         subTitle:"Кириллов Р. Р.",
+    //         notes:  [
 //             {
 //                 id: 4,
 //                 title: "Три"
@@ -108,12 +70,12 @@ export default App;
 // const [notesLists, setNotesLists] = useState(
 //     [
 //         [
+    //             {
+        //                 id: 1,
+        //                 title: "Раз"
+        //             },
 //             {
-//                 id: 1,
-//                 title: "Раз"
-//             },
-//             {
-//                 id: 2,
+    //                 id: 2,
 //                 title: "Раз-Два"
 //             }
 //         ],
@@ -125,10 +87,10 @@ export default App;
 //         ],
 //         [
 //             {
-//                 id: 4,
-//                 title: "Три"
-//             }
-//         ]
+    //                 id: 4,
+    //                 title: "Три"
+    //             }
+    //         ]
 //     ]
 // );
 
@@ -138,7 +100,7 @@ export default App;
     //     setSubjects(response.data.subjects);
     // }
     // const uri = "http://localhost:5000/post";
-
+    
     // async function post(postData) {
     //      await axios.post(uri, postData)
     // }
@@ -156,3 +118,41 @@ export default App;
     // }, [])
 
     //
+        // const [subjects, setSubjects] = useState([]);
+        
+        // const addSubject = (newSubject) => {
+        //     // post(newSubject)
+        //     setSubjects([...subjects, newSubject])
+        //     setModalVisible(false)
+        // }
+        
+        // const removeSubject = (subject) => {
+        //     setSubjects(subjects.filter((s) => s.id !== subject.id))
+        
+        //     // deleteMethod({SSI, subject })
+        
+        // }
+        
+        // const addNote = (note) => {
+        //     const list  = [...subjects];
+        //     list[SSI].notes.push(note);
+        //     setSubjects([...list]);
+        
+        //     // put({SSI, note, add: true});
+        // }
+        
+        // const removeNote = (note) => {
+        //     const list  = [...subjects];
+        //     list[SSI] = {
+        //         ...list[SSI],
+        //         notes: list[SSI].notes.filter(n => n.id !== note.id)
+        //     };
+        //     setSubjects([...list]);
+        //     // const updatedData ;
+        //     // put({SSI, note, add:false});
+        
+        // }
+        
+        // const [SSI, setSSI] = useState(0) // selectedSubjectIndex
+        
+        // const [modalVisible, setModalVisible] = useState(false);

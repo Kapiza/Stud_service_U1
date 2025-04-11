@@ -3,8 +3,12 @@ import "../styles/App.css"
 import NoteList from "./NoteList";
 import NoteForm from "./NoteForm";
 import Block from "./Block";
+import {useSelector} from 'react-redux'
 
 const Subject = ({subject, addNote, removeNote}) => {
+
+    const teachers = useSelector(state => state.disciplines)
+    console.log(teachers)
 
     return (
         <div className="Subject">
