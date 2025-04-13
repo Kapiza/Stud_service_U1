@@ -4,7 +4,7 @@ import Subject from "./Subject";
 const MainArea = () => {
     return (
         <div className="MainArea">
-            <Subject></Subject>
+            <Subject/>
         </div>
     );
 };

@@ -90,13 +90,14 @@ p{
     flex-direction: row;
 }
 
-.info > p{
+.info > *{
     margin-right: 20px;
 }
 
 .blocks{
+    
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto;
 
     grid-auto-flow: column;
@@ -105,6 +106,7 @@ p{
 
     padding: 30px 2%;
     height: 100%;
+    /* background-color: #eee3e3; */
     /*width: 100%;*/
 }
 
@@ -112,9 +114,10 @@ p{
     border: solid 2px #000000;
     /*margin: 2%;*/
     padding: 2% 5%;
+    /* background-color: rgb(255, 255, 255); */
 }
 
-.list_class{
+.list_classes{
     margin: 5px 0;
 }
 

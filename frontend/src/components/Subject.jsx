@@ -1,30 +1,44 @@
 // import React, {useState} from 'react';
-import "../styles/App.css"
-import NoteList from "./NoteList";
-import NoteForm from "./NoteForm";
-import Block from "./Block";
+import { DisContext } from "../context";
 import {useSelector} from 'react-redux'
+import { useContext } from "react";
+import "../styles/App.css"
+import Block from "./Block";
+import TeacherContacts from "./TeacherContacts";
+import Lessons from "./Lessons";
 
-const Subject = ({subject, addNote, removeNote}) => {
 
-    const teachers = useSelector(state => state.disciplines)
-    console.log(teachers)
+const Subject = () => {
+
+    const disciplines = useSelector(state => state.disciplines)
+    const {disId} = useContext(DisContext)
+    const discipline = disciplines.byId[disId]
+    
+    const teachers = useSelector(state => state.teachers);
+    const teacher = teachers.byId[discipline.teacherId]
 
     return (
         <div className="Subject">
             <div className="info">
-                <p >Физика</p>
-                <p >Ситников М. Н.</p>
-                <p className="link">E-mail, VK, TG</p>
-                <p >Экзамен</p>
+                <p >{discipline.name}</p>
+                <p >{teacher.name}</p>
+                <TeacherContacts teacherId={discipline.teacherId}/>
+                <p >{discipline.assessment_type}</p>
             </div>
             <div className="blocks">
-                <Block class="class_block"/>
-                <Block class="class_block"/>
-                <Block class="description_block"/>
-
+                <Block disciplineId={discipline.id} className="class_block" classes_type = {'практика'}>
+                    <p className="level_2">Практика</p> 
+                    <Lessons classesType = {"практика"}/>
+                </Block>
+                <Block disciplineId={discipline.id} className="class_block" classes_type = {'теория'}>
+                    <p className="level_2">Теория</p> 
+                    <Lessons classesType = {"теория"}/>
+                </Block>
+                <Block className="description_block">
+                    <p className="level_2">Описание</p> 
+                    {discipline.description}    
+                </Block>
             </div>
-
         </div>
     )
 };

@@ -4,9 +4,11 @@ const teachersContactsSlice = createSlice({
     name: "teachersContacts",
     initialState: {
         byId: {
-            1: {id: 1, teacher_id: 1, name: "VK"},
+            1: {id: 1, teacherId: 1, link: "VK"},
+            2: {id: 2, teacherId: 2, link: "E-mail"},
+
         },
-        allIds: [1]
+        allIds: [1, 2]
     },
     reducers:{
         addTeacherContact(state, action){

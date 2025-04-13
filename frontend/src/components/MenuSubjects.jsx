@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useSelector } from 'react-redux';
+import { DisContext } from '../context';
 
 const MenuSubjects = () => {
+
+    const {byId, allIds} = useSelector(state => state.disciplines)
+    const {setDisId} = useContext(DisContext)
+
+
     return (
         <div className="MenuSubjects">
 
@@ -10,11 +17,14 @@ const MenuSubjects = () => {
             </div>
 
             <menu className="list_subjects">
-                <p>Информционные технологии</p>
-                <p>Технический перевод</p>
-                <p>Вычислительная математика</p>
+                {allIds.map(id =>{
+                    return(
+                        <p onClick={() => {
+                            setDisId(id)
+                        }}>{byId[id].name}</p>
+                    )
 
-
+                })}
             </menu>
 
 

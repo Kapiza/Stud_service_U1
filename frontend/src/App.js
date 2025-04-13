@@ -1,28 +1,34 @@
 import './styles/App.css'
-import Subject from "./components/Subject";
+// import Subject from "./components/Subject";
 import {useState} from "react";
-import MyModal from "./components/MyModal";
-import SubjectForm from "./components/SubjectForm";
+// import MyModal from "./components/MyModal";
+// import SubjectForm from "./components/SubjectForm";
 import Sidebar from "./components/Sidebar";
 import MainArea from "./components/MainArea";
+import { DisContext } from './context';
+
 
 
 function App() {
 
+    const [disId, setDisId] = useState(1)
     
     return (
-        <div className="App">
-            <MainArea />
-            <Sidebar />
-
-
-            {/*<Subject subject={subjects[SSI]} addNote={addNote} removeNote={removeNote}/>*/}
-            {/*<SubjectMenu subjects={subjects} setSSI={setSSI} setModalVisible={setModalVisible}*/}
-            {/*             removeSubject={removeSubject}/>*/}
-            {/*<MyModal modalVisible={modalVisible} setModalVisible={setModalVisible}>*/}
-            {/*    <SubjectForm addSubject={addSubject}/>*/}
-            {/*</MyModal>*/}
-        </div>
+        <DisContext.Provider value={{
+            disId,
+            setDisId
+        }}>
+            <div className="App">
+                <MainArea />
+                <Sidebar />
+                {/*<Subject subject={subjects[SSI]} addNote={addNote} removeNote={removeNote}/>*/}
+                {/*<SubjectMenu subjects={subjects} setSSI={setSSI} setModalVisible={setModalVisible}*/}
+                {/*             removeSubject={removeSubject}/>*/}
+                {/*<MyModal modalVisible={modalVisible} setModalVisible={setModalVisible}>*/}
+                {/*    <SubjectForm addSubject={addSubject}/>*/}
+                {/*</MyModal>*/}
+            </div>
+        // </DisContext.Provider>
     );
 }
 
