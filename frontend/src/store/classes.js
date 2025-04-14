@@ -13,11 +13,17 @@ const classesSlice = createSlice({
             2: { 
                 id: 2,
                 disciplineId: 1, 
+                classType: "практика", 
+                name: "Практическая работа", 
+            },
+            3: { 
+                id: 3,
+                disciplineId: 1, 
                 classType: "теория", 
                 name: "Лабораторная работа", 
             },
         },
-        allIds:[1, 2]
+        allIds:[1, 2, 3]
     },
     reducers:{
         addClass(state, action){

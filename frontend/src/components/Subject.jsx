@@ -20,7 +20,7 @@ const Subject = () => {
     return (
         <div className="Subject">
             <div className="info">
-                <p >{discipline.name}</p>
+                <p className="dis_name" >{discipline.name}</p>
                 <p >{teacher.name}</p>
                 <TeacherContacts teacherId={discipline.teacherId}/>
                 <p >{discipline.assessment_type}</p>

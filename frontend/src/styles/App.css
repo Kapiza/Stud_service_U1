@@ -20,6 +20,7 @@ html{
     --section_title-height: 65px;
     --icon_height: var(--section_title-height);
     --icon_width: var(--icon_height);
+    --block-background-color:#e9f1f5;
 }
 
 
@@ -41,6 +42,7 @@ p{
 }
 
 .SVG-icon{
+    color: #ffffff;
     margin-right: 15px;
     height: var(--section_title-height);
     width: var(--section_title-height);
@@ -77,7 +79,7 @@ p{
 .MainArea{
     width: 80%;
     height: 100%;
-    padding: 2%;
+    padding: 2% 3%;
 }
 
 .Subject{
@@ -85,14 +87,23 @@ p{
     width: 100%;
 }
 
+.dis_name{
+    /* color: #003029; */
+    /* font-weight: 600; */
+}
+
+
 .info{
     display: flex;
     flex-direction: row;
+    gap: 24px;
 }
 
-.info > *{
+/* .info > *{
     margin-right: 20px;
-}
+} */
+
+
 
 .blocks{
     
@@ -104,7 +115,7 @@ p{
     gap: 16px;
 
 
-    padding: 30px 2%;
+    padding: 30px 0;
     height: 100%;
     /* background-color: #eee3e3; */
     /*width: 100%;*/
@@ -113,20 +124,36 @@ p{
 .Block{
     border: solid 2px #000000;
     /*margin: 2%;*/
-    padding: 2% 5%;
-    /* background-color: rgb(255, 255, 255); */
+    padding: 15px  ;
+    background-color: var(--block-background-color);
 }
 
 .list_classes{
-    margin: 5px 0;
+    margin: 5px 2px;
 }
 
+
+
 .class{
+    background-color: #ffffff;
+    /* border-top: 1px solid #000000 ;  */
+    border: 1px solid #000000 ; 
+    /* border-left: 1px solid #000000 ; 
+    border-right: 1px solid #000000 ;  */
+
+    border-radius: 8px;
+
+    padding: 20px 5px;
+
     height: 1.5rem;
     display: flex;
-    margin: 5px 0;
+    margin: 3px 0;
     align-items: center ;
 }
+/* .class:first-child {
+    border-top: 1px solid #000;
+    border-radius: 5px;
+} */
 
 .description_block{
     grid-column: span 2;
@@ -134,16 +161,14 @@ p{
 }
 
 .Sidebar{
+    box-sizing: content-box;
+    border-left: 5px dashed #7498c0;
     margin-left: auto;
-    background: #d2d4d5;
+    background: #c2e4d3;
     /*width: 382px;*/
     height: 100%;
     padding: 1% 1.5%;
-
     /*justify-content: center;*/
-
-
-
 }
 
 .SubjectMenu {
@@ -162,14 +187,53 @@ p{
     margin-bottom: 15px;
 }
 
+.list_subjects{
+    background-color: var(--block-background-color);
+}
+
 .list_subjects > p{
-    padding: 0 0 10px 0;
+    padding: 10px;
+   
 }
 
 .SubjectMenu > * {
     display: flex;
     flex-direction: column;
 }
+
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .SubjectForm{
     display: flex;
