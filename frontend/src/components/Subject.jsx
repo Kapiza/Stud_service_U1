@@ -20,7 +20,7 @@ const Subject = () => {
     return (
         <div className="Subject">
             <div className="info">
-                <p className="dis_name" >{discipline.name}</p>
+                <p className="dis_title" >{discipline.name}</p>
                 <p >{teacher.name}</p>
                 <TeacherContacts teacherId={discipline.teacherId}/>
                 <p >{discipline.assessment_type}</p>
@@ -36,7 +36,7 @@ const Subject = () => {
                 </Block>
                 <Block className="description_block">
                     <p className="level_2">Описание</p> 
-                    {discipline.description}    
+                    <p className="description"> {discipline.description}      </p>
                 </Block>
             </div>
         </div>

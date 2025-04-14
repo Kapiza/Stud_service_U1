@@ -19,8 +19,11 @@ function App() {
             setDisId
         }}>
             <div className="App">
-                <MainArea />
-                <Sidebar />
+                <div className="wrapper">
+                    <MainArea />
+                    <Sidebar />
+
+                </div>
                 {/*<Subject subject={subjects[SSI]} addNote={addNote} removeNote={removeNote}/>*/}
                 {/*<SubjectMenu subjects={subjects} setSSI={setSSI} setModalVisible={setModalVisible}*/}
                 {/*             removeSubject={removeSubject}/>*/}
@@ -28,7 +31,7 @@ function App() {
                 {/*    <SubjectForm addSubject={addSubject}/>*/}
                 {/*</MyModal>*/}
             </div>
-        // </DisContext.Provider>
+         </DisContext.Provider>
     );
 }
 
