@@ -1,8 +1,5 @@
 import './styles/App.css'
-// import Subject from "./components/Subject";
-import {useState} from "react";
-// import MyModal from "./components/MyModal";
-// import SubjectForm from "./components/SubjectForm";
+import {useState, useEffect} from "react";
 import Sidebar from "./components/Sidebar";
 import MainArea from "./components/MainArea";
 import { DisContext } from './context';
@@ -10,8 +7,12 @@ import { DisContext } from './context';
 
 
 function App() {
-
+    
     const [disId, setDisId] = useState(1)
+
+    useEffect(() => {
+        console.log("disId изменился:", disId)
+    }, [disId])
     
     return (
         <DisContext.Provider value={{
@@ -19,23 +20,20 @@ function App() {
             setDisId
         }}>
             <div className="App">
-                <div className="wrapper">
-                    <MainArea />
-                    <Sidebar />
-
-                </div>
-                {/*<Subject subject={subjects[SSI]} addNote={addNote} removeNote={removeNote}/>*/}
-                {/*<SubjectMenu subjects={subjects} setSSI={setSSI} setModalVisible={setModalVisible}*/}
-                {/*             removeSubject={removeSubject}/>*/}
-                {/*<MyModal modalVisible={modalVisible} setModalVisible={setModalVisible}>*/}
-                {/*    <SubjectForm addSubject={addSubject}/>*/}
-                {/*</MyModal>*/}
+                <MainArea></MainArea>
+                <Sidebar></Sidebar>
             </div>
          </DisContext.Provider>
     );
 }
 
 export default App;
+
+{/* <div className="wrapper">
+    <MainArea />
+    <Sidebar />
+
+</div> */}
 
 //     {
 //         id:0,
@@ -57,7 +55,7 @@ export default App;
 //         title:"2",
 //         subTitle:"Кириллов Р. Р.",
 //         notes: [
-//             {
+    //             {
     //                 id: 3,
 //                 title: "Два"
 //             }
@@ -121,7 +119,7 @@ export default App;
     // async function deleteMethod(deletedData) {
     //     await axios.delete("http://localhost:5000/delete",  { data: deletedData });
     // }
-
+    
     // useEffect(() => {
     //     // get();
     // }, [])
@@ -153,9 +151,9 @@ export default App;
         // const removeNote = (note) => {
         //     const list  = [...subjects];
         //     list[SSI] = {
-        //         ...list[SSI],
-        //         notes: list[SSI].notes.filter(n => n.id !== note.id)
-        //     };
+            //         ...list[SSI],
+            //         notes: list[SSI].notes.filter(n => n.id !== note.id)
+            //     };
         //     setSubjects([...list]);
         //     // const updatedData ;
         //     // put({SSI, note, add:false});
@@ -165,3 +163,10 @@ export default App;
         // const [SSI, setSSI] = useState(0) // selectedSubjectIndex
         
         // const [modalVisible, setModalVisible] = useState(false);
+        
+        {/*<Subject subject={subjects[SSI]} addNote={addNote} removeNote={removeNote}/>*/}
+        {/*<SubjectMenu subjects={subjects} setSSI={setSSI} setModalVisible={setModalVisible}*/}
+        {/*             removeSubject={removeSubject}/>*/}
+        {/*<MyModal modalVisible={modalVisible} setModalVisible={setModalVisible}>*/}
+        {/*    <SubjectForm addSubject={addSubject}/>*/}
+        {/*</MyModal>*/}

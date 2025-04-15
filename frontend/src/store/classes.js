@@ -8,7 +8,7 @@ const classesSlice = createSlice({
                 id: 1,
                 disciplineId: 1, 
                 classType: "практика", 
-                name: "Практическая работа", 
+                name: "Оптика лаб.1 ", 
             },
             2: { 
                 id: 2,
@@ -18,8 +18,8 @@ const classesSlice = createSlice({
             },
             3: { 
                 id: 3,
-                disciplineId: 1, 
-                classType: "теория", 
+                disciplineId: 2, 
+                classType: "практика", 
                 name: "Лабораторная работа", 
             },
         },

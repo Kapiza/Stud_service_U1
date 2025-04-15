@@ -19,28 +19,62 @@ const Subject = () => {
 
     return (
         <div className="Subject">
-            <div className="info">
-                <p className="dis_title" >{discipline.name}</p>
+
+            <div className="part_1 title_block title_name active_title level_1">
+                {discipline.name}
+            </div>
+
+            <div className="part_2 work_block" disciplineId={discipline.id} classes_type = {'практика'}>
+                <p className="level_2">Практика</p> 
+                <Lessons classesType = {"практика"}/>
+            </div>
+
+            <div className="part_3 work_block" disciplineId={discipline.id}  classes_type = {'теория'}>
+                <p className="level_2">Теория</p> 
+                <Lessons classesType = {"теория"}/>
+            </div>
+
+            <div className="part_4 info level_1">
                 <p >{teacher.name}</p>
                 <TeacherContacts teacherId={discipline.teacherId}/>
                 <p >{discipline.assessment_type}</p>
             </div>
-            <div className="blocks">
-                <Block disciplineId={discipline.id} className="class_block" classes_type = {'практика'}>
-                    <p className="level_2">Практика</p> 
-                    <Lessons classesType = {"практика"}/>
-                </Block>
-                <Block disciplineId={discipline.id} className="class_block" classes_type = {'теория'}>
-                    <p className="level_2">Теория</p> 
-                    <Lessons classesType = {"теория"}/>
-                </Block>
-                <Block className="description_block">
+
+            <div className="part_5 work_block">
                     <p className="level_2">Описание</p> 
                     <p className="description"> {discipline.description}      </p>
-                </Block>
-            </div>
+            </div> 
+
         </div>
     )
 };
 
 export default Subject;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {/* <div className="info">
+    </div>
+    <div className="blocks">
+        <Block  className="class_block" classes_type = {'практика'}>
+        </Block>
+      
+       
+    {/* </div> */}

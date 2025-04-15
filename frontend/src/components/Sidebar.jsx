@@ -3,9 +3,9 @@ import MenuSubjects from "./MenuSubjects";
 
 const Sidebar = () => {
     return (
-        <div className="Sidebar">
+        <nav className="Sidebar">
             <MenuSubjects/>
-        </div>
+        </nav>
     );
 };
 

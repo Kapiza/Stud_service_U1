@@ -5,7 +5,7 @@ import { DisContext } from '../context';
 const MenuSubjects = () => {
 
     const {byId, allIds} = useSelector(state => state.disciplines)
-    const {setDisId} = useContext(DisContext)
+    const {disId,setDisId} = useContext(DisContext)
 
 
     return (
@@ -24,10 +24,11 @@ const MenuSubjects = () => {
 
             <menu className="list_subjects">
                 {allIds.map(id =>{
+       
                     return(
-                        <p className="dis_name" onClick={() => {setDisId(id)}}> 
+                        <div key={id} className={`menu_el ${id === disId ? 'active_title' : ''} title_name`} onClick={() => {setDisId(id)}}> 
                             {byId[id].name}
-                        </p>
+                        </div>
                     )
 
                 })}

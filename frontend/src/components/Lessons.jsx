@@ -22,10 +22,10 @@ const Lessons = ({ classesType }) => {
             );
           }
         })}
-            <div className="class">
+            {/* <div className="class">
                 <p>   |</p>
                 {/* <img src="doc_icon.svg" alt="icon" className="doc-SVG" /> */}
-              </div>
+              {/* </div> */} 
       </ol>
   );
 };
