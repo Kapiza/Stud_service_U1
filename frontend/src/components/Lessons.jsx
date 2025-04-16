@@ -6,6 +6,8 @@ const Lessons = ({ classesType }) => {
   const classes = useSelector((state) => state.classes);
   const {disId} = useContext(DisContext)
 
+  
+
   return (
       <ol className="list_classes">
         {classes.allIds.map((id) => {

@@ -3,23 +3,38 @@ import {useState, useEffect} from "react";
 import Sidebar from "./components/Sidebar";
 import MainArea from "./components/MainArea";
 import { DisContext } from './context';
+import ContextMenu from './components/ContextMenu';
 
 
 
 function App() {
     
     const [disId, setDisId] = useState(1)
+    const [isVisible, setIsVisible] = useState(false);
+    const [contextMenuCoords, setContextMenuCoords] = useState({x:0, y:0});
+    
 
-    useEffect(() => {
-        console.log("disId изменился:", disId)
-    }, [disId])
+    
+    const handleRightClick = (e) => {
+        e.preventDefault()
+        setContextMenuCoords({
+            x:e.pageX,
+            y:e.pageY
+        })
+
+        // console.log(contextMenuCoords)
+        setIsVisible(true)
+        // console.log("what")
+    }
+
     
     return (
         <DisContext.Provider value={{
             disId,
             setDisId
         }}>
-            <div className="App">
+            <div className="App" onContextMenu={handleRightClick}>
+            <ContextMenu coords = {contextMenuCoords}isVisible = {isVisible}></ContextMenu>
                 <MainArea></MainArea>
                 <Sidebar></Sidebar>
             </div>
@@ -29,10 +44,14 @@ function App() {
 
 export default App;
 
+// useEffect(() => {
+//     console.log("disId изменился:", disId)
+// }, [disId])
+
 {/* <div className="wrapper">
     <MainArea />
     <Sidebar />
-
+    
 </div> */}
 
 //     {

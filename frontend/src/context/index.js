@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
 export const DisContext = createContext(null)
+
+export const ConMenuContext = createContext(null)

@@ -228,6 +228,31 @@ main {
     background-color: var(--title_blue);
 }
 
+.context_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    font-size: 60px;
+    height: 0.8em;
+    width: 1.5em
+}
+
+.ContextMenu{
+    position: absolute;
+    /* visibility: hidden; */
+}
+
+.add{
+    background-color: #00D0A0;
+}
+
+.add::before{
+    content: "+";
+}
+
 
 
 
