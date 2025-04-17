@@ -1,48 +1,42 @@
 import './styles/App.css'
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
+// import App
 import Sidebar from "./components/Sidebar";
 import MainArea from "./components/MainArea";
-import { DisContext } from './context';
+import { ConMenuContext, DisContext } from './context';
 import ContextMenu from './components/ContextMenu';
+import { AppProviders } from './components/ContextProviders';
 
 
 
 function App() {
-    
-    const [disId, setDisId] = useState(1)
-    const [isVisible, setIsVisible] = useState(false);
-    const [contextMenuCoords, setContextMenuCoords] = useState({x:0, y:0});
-    
 
-    
-    const handleRightClick = (e) => {
-        e.preventDefault()
-        setContextMenuCoords({
-            x:e.pageX,
-            y:e.pageY
-        })
-
-        // console.log(contextMenuCoords)
-        setIsVisible(true)
-        // console.log("what")
-    }
+    const {hideMenu} = useContext(ConMenuContext)
 
     
     return (
-        <DisContext.Provider value={{
-            disId,
-            setDisId
-        }}>
-            <div className="App" onContextMenu={handleRightClick}>
-            <ContextMenu coords = {contextMenuCoords}isVisible = {isVisible}></ContextMenu>
-                <MainArea></MainArea>
-                <Sidebar></Sidebar>
-            </div>
-         </DisContext.Provider>
+        <div className="App"  onClick={hideMenu} >
+            <ContextMenu/>
+            <MainArea></MainArea>
+            <Sidebar></Sidebar>
+        </div> 
     );
 }
 
 export default App;
+
+// return (
+//     <DisContext.Provider value={{
+//         disId,
+//         setDisId
+//     }}>
+//         <div className="App" onContextMenu={handleRightClick}>
+//         <ContextMenu coords = {contextMenuCoords}isVisible = {isVisible}></ContextMenu>
+//             <MainArea></MainArea>
+//             <Sidebar></Sidebar>
+//         </div>
+//      </DisContext.Provider>
+// );
 
 // useEffect(() => {
 //     console.log("disId изменился:", disId)

@@ -1,11 +1,13 @@
 // import React, {useState} from 'react';
-import { DisContext } from "../context";
+import { ConMenuContext, DisContext } from "../context";
 import {useSelector} from 'react-redux'
 import { useContext } from "react";
 import "../styles/App.css"
 import Block from "./Block";
 import TeacherContacts from "./TeacherContacts";
 import Lessons from "./Lessons";
+import ContextMenu from "./ContextMenu";
+import ContextMenuButton from "./ContextMenuButton";
 
 
 const Subject = () => {
@@ -17,6 +19,9 @@ const Subject = () => {
     const teachers = useSelector(state => state.teachers);
     const teacher = teachers.byId[discipline.teacherId]
 
+    const {displayMenu, hideMenu} = useContext(ConMenuContext)
+
+
     return (
         <div className="Subject">
 
@@ -24,12 +29,13 @@ const Subject = () => {
                 {discipline.name}
             </div>
 
-            <div className="part_2 work_block" disciplineId={discipline.id} classes_type = {'практика'}>
+            <div className="part_2 work_block" disciplineId={discipline.id} classes_type = {'практика'} onContextMenu={displayMenu}>
                 <p className="level_2">Практика</p> 
                 <Lessons classesType = {"практика"}/>
+        
             </div>
 
-            <div className="part_3 work_block" disciplineId={discipline.id}  classes_type = {'теория'}>
+            <div className="part_3 work_block" disciplineId={discipline.id}  classes_type = {'теория'} onContextMenu={displayMenu}>
                 <p className="level_2">Теория</p> 
                 <Lessons classesType = {"теория"}/>
             </div>

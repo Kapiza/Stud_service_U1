@@ -253,6 +253,14 @@ main {
     content: "+";
 }
 
+.delete{
+    background-color: #F00000;
+}
+
+.delete::before{
+    content: "×";
+}
+
 
 
 

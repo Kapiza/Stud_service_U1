@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from "react"
+import React, { useContext, useEffect, useRef } from "react"
+import { ConMenuContext } from "../context";
 
 
-const ContextMenu = ({coords, isVisible}) => {
+const ContextMenu = ({children}) => {
 
     const contextMenuRef = useRef(null)
 
-
+    const {isVisible, coords} = useContext(ConMenuContext)
 
     useEffect(() => {
         if (contextMenuRef.current) {
@@ -16,14 +17,12 @@ const ContextMenu = ({coords, isVisible}) => {
           console.log(coords)
         }
       }, [isVisible, coords]);
-    // isVisible ? contextMenuRef.current.style.visibility = "visible" : contextMenuRef.current.style.visibility = "hidden"
-    // console.log("what")
 
     return (
         <div className="ContextMenu" ref={contextMenuRef}>
-            <button className="context_button add">
-
-            </button>
+              {children}
+            {/* <button className="context_button add"> */}
+            {/* </button> */}
         </div>
     )
 }
