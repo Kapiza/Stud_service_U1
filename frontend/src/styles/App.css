@@ -122,10 +122,14 @@ main {
 
 .part_2{
     grid-area: part_2;
+    max-height: 381.5px;
+
 }
 
 .part_3{
     grid-area: part_3;
+    max-height: 381.5px;
+
 }
 
 .part_4{
@@ -173,6 +177,8 @@ main {
 }
 
 .list_classes{
+    max-height: 80%;
+    overflow: auto;
     margin: 15px 2px;
     display: flex;
     flex-direction: column;
@@ -183,7 +189,7 @@ main {
 .class{
     background-color: var(--pastel_green);
     border-radius: var(--el_border_rad);
-    padding: 10px 10px;
+    padding: 10px;
     /* height: 1.5rem; */
     display: flex;
     align-items: center ;
@@ -217,7 +223,7 @@ main {
 .menu_el{
     background-color: var(--title_grey);
     padding: 10px;
-    border-radius: 8px;
+    border-radius: var(--el_border_rad);
 }
 
 .menu_el:hover{
@@ -261,8 +267,41 @@ main {
     content: "×";
 }
 
+.input{
+    padding: 10px;
+    border-radius: var(--el_border_rad);
+}
 
+.modal{
+    height: 92%;
+    width: 92%;
+    background-color: rgba(13, 61, 105, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.LessonForm{
+    border-radius: 16px;
+    /* height: 400px; */
+    /* width: 600px; */
+    background-color:rgb(0, 79, 153);
+
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 20px
+    
+}
+
+.LessonForm > *{
+    font-size:  1rem;
+
+}
+
+.LessonInput{
+    align-self: center;
+}
 
 
 

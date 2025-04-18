@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import { DisContext } from "../context";
+import { ConMenuContext } from "../context";
 
 const Lessons = ({ classesType }) => {
   const classes = useSelector((state) => state.classes);
   const {disId} = useContext(DisContext)
 
+  const {displayMenu} = useContext(ConMenuContext)
+  
   
 
   return (
@@ -17,7 +20,7 @@ const Lessons = ({ classesType }) => {
             disId == lesson.disciplineId
           ) {
             return (
-              <div className="class">
+              <div className="class" onContextMenu={(e) => displayMenu(e, "delete",() => console.log(31))}>
                 <p>{lesson.name}</p>
                 <img src="doc_icon.svg" alt="icon" className="doc-SVG" />
               </div>

@@ -22,8 +22,38 @@ const classesSlice = createSlice({
                 classType: "практика", 
                 name: "Лабораторная работа", 
             },
+            4: { 
+                id: 4,
+                disciplineId: 1, 
+                classType: "практика", 
+                name: "Оптика лаб.1 ", 
+            },
+            5: { 
+                id: 5,
+                disciplineId: 1, 
+                classType: "практика", 
+                name: "Оптика лаб.1 ", 
+            },
+            6: { 
+                id: 6,
+                disciplineId: 1, 
+                classType: "практика", 
+                name: "Оптика лаб.1 ", 
+            },
+            6: { 
+                id: 6,
+                disciplineId: 1, 
+                classType: "практика", 
+                name: "Оптика лаб.1 ", 
+            },
+            7: { 
+                id: 7,
+                disciplineId: 1, 
+                classType: "практика", 
+                name: "Оптика лаб.1 ", 
+            },
         },
-        allIds:[1, 2, 3]
+        allIds:[1, 2, 3, 4, 5, 6, 7]
     },
     reducers:{
         addClass(state, action){

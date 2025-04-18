@@ -7,7 +7,7 @@ import Block from "./Block";
 import TeacherContacts from "./TeacherContacts";
 import Lessons from "./Lessons";
 import ContextMenu from "./ContextMenu";
-import ContextMenuButton from "./ContextMenuButton";
+import ContextMenuButton from "../archive/ContextMenuButton";
 
 
 const Subject = () => {
@@ -19,7 +19,7 @@ const Subject = () => {
     const teachers = useSelector(state => state.teachers);
     const teacher = teachers.byId[discipline.teacherId]
 
-    const {displayMenu, hideMenu} = useContext(ConMenuContext)
+    const {displayMenu} = useContext(ConMenuContext)
 
 
     return (
@@ -29,7 +29,7 @@ const Subject = () => {
                 {discipline.name}
             </div>
 
-            <div className="part_2 work_block" disciplineId={discipline.id} classes_type = {'практика'} onContextMenu={(e) => displayMenu(e, "delete",console.log)}>
+            <div className="part_2 work_block" disciplineId={discipline.id} classes_type = {'практика'} onContextMenu={(e) => displayMenu(e, "add", () => console.log(51))}>
                 <p className="level_2">Практика</p> 
                 <Lessons classesType = {"практика"}/>
         

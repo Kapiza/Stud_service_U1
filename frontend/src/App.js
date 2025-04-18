@@ -3,19 +3,32 @@ import {useState, useEffect, useContext} from "react";
 // import App
 import Sidebar from "./components/Sidebar";
 import MainArea from "./components/MainArea";
-import { ConMenuContext, DisContext } from './context';
+import { ConMenuContext, DisContext, ModalContext } from './context';
 import ContextMenu from './components/ContextMenu';
-import { AppProviders } from './components/ContextProviders';
+import Modal from './components/Modal';
+import LessonForm from './components/LessonForm';
+
 
 
 
 function App() {
 
     const {hideMenu} = useContext(ConMenuContext)
+    const {hideModal} = useContext(ModalContext)
+
+    const handlerOnClickApp = (e) => {
+        hideMenu(e)
+        hideModal(e)
+    }
+
+
 
     
     return (
-        <div className="App"  onClick={hideMenu} >
+        <div className="App"  onClick={hideMenu} onContextMenu={hideModal}>
+            <Modal>
+                <LessonForm></LessonForm>
+            </Modal>
             <ContextMenu/>
             <MainArea></MainArea>
             <Sidebar></Sidebar>
