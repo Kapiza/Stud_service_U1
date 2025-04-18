@@ -6,7 +6,7 @@ const ContextMenu = ({children}) => {
 
     const contextMenuRef = useRef(null)
 
-    const {isVisible, coords} = useContext(ConMenuContext)
+    const {isVisible, coords, action, btnType} = useContext(ConMenuContext)
 
     useEffect(() => {
         if (contextMenuRef.current) {
@@ -20,9 +20,12 @@ const ContextMenu = ({children}) => {
 
     return (
         <div className="ContextMenu" ref={contextMenuRef}>
-              {children}
-            {/* <button className="context_button add"> */}
-            {/* </button> */}
+              {/* {children} */}
+              
+            {/* <button className="context_button add" onClick={action}> */}
+            <button className={`context_button ${btnType}`} onClick={action}>
+
+            </button>
         </div>
     )
 }

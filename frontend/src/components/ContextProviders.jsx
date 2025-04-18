@@ -9,12 +9,20 @@ export const ContextProviders = ({children}) => {
 
     const [conMenuIsVisible, setConMenuIsVisible] = useState(false);
     const [conMenuCoords, setConMenuCoords] = useState({x:0, y:0});
-    const displayMenu = (e) => { 
+    const [conMenuBtnAct, setConMenuBtnAct] = useState(()=>null) // i think this is bad code, but i dont know hoy to do it kmhg
+    const [conMenuBtnType, setConMenuBtnType] = useState('')
+
+
+
+    const displayMenu = (e, type, func) => { 
         e.preventDefault()
         setConMenuCoords({
             x:e.pageX,
             y:e.pageY
         })
+        
+        setConMenuBtnAct(() => func)
+        setConMenuBtnType(type)
         setConMenuIsVisible(true)
     }
 
@@ -23,16 +31,19 @@ export const ContextProviders = ({children}) => {
         setConMenuIsVisible(false)
     }
 
-
-
     
     const conMenu = {
         isVisible: conMenuIsVisible,
         setIsVisible: setConMenuIsVisible,
         coords: conMenuCoords,
         setCoords: setConMenuCoords,
+        action: conMenuBtnAct,
+        setAction: setConMenuBtnAct,
+        btnType: conMenuBtnType,
+        setBtnTyppe: setConMenuBtnType,
+
         displayMenu,
-        hideMenu
+        hideMenu,
     }
 
     return(
