@@ -57,11 +57,18 @@ const classesSlice = createSlice({
     },
     reducers:{
         addClass(state, action){
-            state.push(action.payload)
+            const newClass = action.payload
+            state.byId[newClass.id] = newClass
+            state.allIds.push(newClass.id)
+        },
+        deleteClass(state, action){
+            const deletedClass = action.payload
+            delete state.byId[deletedClass.id]
+            state.allIds = state.allIds.filter((id) => deletedClass.id != id)
         }
     }
 })
 
-export const {addClass} = classesSlice.actions
+export const {addClass, deleteClass} = classesSlice.actions
 export default classesSlice.reducer
 

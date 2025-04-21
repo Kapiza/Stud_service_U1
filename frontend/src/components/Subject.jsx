@@ -29,13 +29,13 @@ const Subject = () => {
                 {discipline.name}
             </div>
 
-            <div className="part_2 work_block" disciplineId={discipline.id} classes_type = {'практика'} onContextMenu={(e) => displayMenu(e, "add", () => console.log(51))}>
+            <div className="part_2 work_block" disciplineId={discipline.id} classes_type = {'практика'} onContextMenu={(e) => displayMenu(e, "add", "практика")}>
                 <p className="level_2">Практика</p> 
                 <Lessons classesType = {"практика"}/>
         
             </div>
 
-            <div className="part_3 work_block" disciplineId={discipline.id}  classes_type = {'теория'} onContextMenu={(e) => displayMenu(e, "add",() => console.log(5))}>
+            <div className="part_3 work_block" disciplineId={discipline.id}  classes_type = {'теория'} onContextMenu={(e) => displayMenu(e, "add", "теория")}>
                 <p className="level_2">Теория</p> 
                 <Lessons classesType = {"теория"}/>
             </div>

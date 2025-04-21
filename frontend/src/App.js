@@ -16,10 +16,11 @@ function App() {
     const {hideMenu} = useContext(ConMenuContext)
     const {hideModal} = useContext(ModalContext)
 
-    const handlerOnClickApp = (e) => {
-        hideMenu(e)
-        hideModal(e)
-    }
+
+    // const handlerOnClickApp = (e) => {
+        // hideMenu(e)
+    //     hideModal(e)
+    // }
 
 
 

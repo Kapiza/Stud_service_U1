@@ -1,39 +1,62 @@
 // import { } from '../context';
-import { ModalContext, ConMenuContext, DisContext  } from '../context';
+import { useDispatch } from 'react-redux';
+import { ModalContext, ConMenuContext, DisContext, LesContext  } from '../context';
 import { useState } from 'react';
+import { deleteClass } from '../store/classes';
 
 
 export const ContextProviders = ({children}) => {
+
+    const dispatch = useDispatch()
+
     
     const [disId, setDisId] = useState(1)
     
-    const [modalIsVisible, setModalIsVisible] = useState(false)
     
     const [conMenuIsVisible, setConMenuIsVisible] = useState(false);
     const [conMenuCoords, setConMenuCoords] = useState({x:0, y:0});
     const [conMenuBtnAct, setConMenuBtnAct] = useState(()=>null) // i think this is bad code, but i dont know hoy to do it kmhg
     const [conMenuBtnType, setConMenuBtnType] = useState('')
     
-    const displayMenu = (e, type, func) => { 
+    const [lessonType, setLessonType] = useState("")
+    
+    const displayMenu = (e, type, lessonType, lesson) => { 
         e.preventDefault()
-
-        if(type == "delete"){
-            e.stopPropagation()        
-        }
-
+        
         setConMenuCoords({
             x:e.pageX,
             y:e.pageY
         })
-        
-        const a = () => {
-            func()
-            setModalIsVisible(true)
+
+
+        if(type == "delete"){
+            e.stopPropagation()    
+            setConMenuBtnType(type)
+              
+            const a = () => {
+                // func()
+                dispatch(deleteClass(lesson))          
+              }
+
+            setConMenuIsVisible(true)
+            setConMenuBtnAct(() => a)
+            // dispatch(deleteClass(lesson))
+
         }
         
-        setConMenuBtnAct(() => a)
-        setConMenuBtnType(type)
-        setConMenuIsVisible(true)
+        
+        if(type == "add"){
+            const a = () => {
+                // func()
+                setModalIsVisible(true)
+            }
+            
+            setConMenuBtnAct(() => a)
+            setConMenuBtnType(type)
+            setConMenuIsVisible(true)
+            setLessonType(lessonType)
+        }
+
     }
     
     const hideMenu = (e) => {
@@ -56,26 +79,36 @@ export const ContextProviders = ({children}) => {
         hideMenu,
     }
 
+    const [modalIsVisible, setModalIsVisible] = useState(false)
+    
     const hideModal = (e) => {
         e.preventDefault()
         setModalIsVisible(false)
     }
-
+    
     const modal = {
         isVisible: modalIsVisible, 
         setisVisible: setModalIsVisible,
-
+        
         hideModal
     }
 
+
+    const les = {
+        type: lessonType,
+        setType: setLessonType
+    }
+    
     return(
-        <ConMenuContext.Provider value={conMenu}>
-            <DisContext.Provider value={{disId, setDisId}}>
-                <ModalContext.Provider value={modal}>
-                    {children}
-                </ModalContext.Provider>
-            </DisContext.Provider>
-        </ConMenuContext.Provider>
+        <DisContext.Provider value={{disId, setDisId}}>
+            <LesContext.Provider value = {les}>
+                <ConMenuContext.Provider value={conMenu}>
+                    <ModalContext.Provider value={modal}>
+                        {children}
+                    </ModalContext.Provider>
+                </ConMenuContext.Provider>
+            </LesContext.Provider>
+        </DisContext.Provider>
     )
 }
 

@@ -20,7 +20,7 @@ const Lessons = ({ classesType }) => {
             disId == lesson.disciplineId
           ) {
             return (
-              <div className="class" onContextMenu={(e) => displayMenu(e, "delete",() => console.log(31))}>
+              <div className="class" onContextMenu={(e) => displayMenu(e, "delete", "", classes.byId[id])}>
                 <p>{lesson.name}</p>
                 <img src="doc_icon.svg" alt="icon" className="doc-SVG" />
               </div>
