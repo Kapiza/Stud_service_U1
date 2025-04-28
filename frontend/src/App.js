@@ -7,11 +7,20 @@ import { ConMenuContext, DisContext, ModalContext } from './context';
 import ContextMenu from './components/ContextMenu';
 import Modal from './components/Modal';
 import LessonForm from './components/LessonForm';
+import { useDispatch } from 'react-redux';
+import { fetchLessons } from './async';
 
 
 
 
 function App() {
+
+    const dispatch = useDispatch()
+
+    useEffect( () =>{
+        dispatch(fetchLessons())
+    }
+    , []) 
 
     const {hideMenu} = useContext(ConMenuContext)
     const {hideModal} = useContext(ModalContext)

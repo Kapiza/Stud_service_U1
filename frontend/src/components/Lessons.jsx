@@ -15,9 +15,10 @@ const Lessons = ({ classesType }) => {
       <ol className="list_classes">
         {classes.allIds.map((id) => {
           const lesson = classes.byId[id];
+          console.log(lesson)
           if (
-            lesson.classType == classesType &&
-            disId == lesson.disciplineId
+            lesson.lesson_type == classesType &&
+            disId == lesson.discipline_id
           ) {
             return (
               <div className="class" onContextMenu={(e) => displayMenu(e, "delete", "", classes.byId[id])}>
