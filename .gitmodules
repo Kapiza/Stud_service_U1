@@ -1,0 +1,3 @@
+[submodule "backend/database_server"]
+	path = backend/database_server
+	url = https://github.com/Kapiza/database_server.git
